@@ -1,3 +1,4 @@
+/* Definición de la clase Contacto */
 class Contacto {
   constructor(
     public id: string,

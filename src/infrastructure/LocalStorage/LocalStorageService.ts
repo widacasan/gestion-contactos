@@ -1,17 +1,16 @@
-// src/infrastructure/LocalStorage/LocalStorageService.ts
 class LocalStorageService {
+  // Método para obtener un elemento del LocalStorage por clave
   obtenerItem(key: string): string | null {
-    // Lógica para obtener un elemento del LocalStorage
     return localStorage.getItem(key);
   }
 
+  // Método para guardar un elemento en el LocalStorage
   guardarItem(key: string, valor: string): void {
-    // Lógica para guardar un elemento en el LocalStorage
     localStorage.setItem(key, valor);
   }
 
+  // Método para eliminar un elemento del LocalStorage por clave
   eliminarItem(key: string): void {
-    // Lógica para eliminar un elemento del LocalStorage
     localStorage.removeItem(key);
   }
 }

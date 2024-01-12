@@ -1,11 +1,11 @@
-/* styles.css */
-
+/* Estilos generales */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   background-color: #f0f0f0;
   color: #333;
 }
 
+/* Estilos para el contenedor principal */
 .container {
   width: 80%;
   margin: 20px auto;
@@ -15,6 +15,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilos para botones */
 button {
   padding: 8px 16px;
   margin-right: 8px;
@@ -23,6 +24,7 @@ button {
   cursor: pointer;
 }
 
+/* Estilos para botón de edición */
 button.edit {
   background-color: #3498db;
   color: #fff;
@@ -32,6 +34,7 @@ button.edit:hover {
   background-color: #2980b9;
 }
 
+/* Estilos para botón de eliminación */
 button.delete {
   background-color: #e74c3c;
   color: #fff;
@@ -41,23 +44,28 @@ button.delete:hover {
   background-color: #c0392b;
 }
 
+/* Estilos para la tabla */
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-th, td {
+/* Estilos para celdas de encabezado y datos en la tabla */
+th,
+td {
   padding: 15px;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
 
+/* Estilos específicos para celdas de encabezado */
 th {
   background-color: #3498db;
   color: #fff;
 }
 
+/* Estilos para contenedor del formulario */
 .form-container {
   margin-top: 20px;
   display: flex;
@@ -65,12 +73,14 @@ th {
   justify-content: space-between;
 }
 
+/* Estilos para campos de entrada del formulario */
 .form-container input {
   flex: 1;
   padding: 10px;
   margin: 5px;
 }
 
+/* Estilos para botones del formulario */
 .form-container button {
   flex: 1;
   padding: 10px;
