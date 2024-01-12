@@ -1,46 +1,86 @@
-# Getting Started with Create React App
+# Gestión de Contactos - Aplicación React TypeScript
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es una aplicación web de gestión de contactos desarrollada con React y TypeScript. Permite listar, agregar, editar y eliminar contactos, almacenando los datos en el LocalStorage del navegador.
 
-## Available Scripts
+## Funcionalidades
 
-In the project directory, you can run:
+- Listar contactos en una tabla.
+- Agregar nuevos contactos con validación de campos.
+- Editar la información de un contacto existente.
+- Eliminar contactos.
+- Almacenar datos en el LocalStorage.
+- Validar que Id, Nombre y Email son obligatorios, y que el Email tenga el formato xxx@xx.xxx.
 
-### `npm start`
+## Cómo Ejecutar la Aplicación
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Requisitos Previos
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Asegúrate de tener Node.js y npm instalados en tu máquina.
 
-### `npm test`
+### Pasos para Ejecutar
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Clona el Repositorio:**
 
-### `npm run build`
+   ```bash
+   git clone https://github.com/widacasan/gestion-contactos.git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Ingresa al Directorio del Proyecto:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   cd gestion-contactos
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Intala dependencias:**
 
-### `npm run eject`
+   ```bash
+   npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. **Ejecuta la aplicacion**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+La aplicación se abrirá en tu navegador predeterminado.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Estructura del Proyecto
 
-## Learn More
+## Descripción de Carpetas y Archivos
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **node_modules:** Este directorio contiene las dependencias del proyecto. Es generado automáticamente al ejecutar `npm install` y no debe ser modificado directamente.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **public:** En este directorio se encuentran los archivos estáticos y el archivo principal `index.html`. Es el punto de entrada de la aplicación React.
+
+- **src:** Directorio principal del código fuente de la aplicación.
+
+  - **adapters:** Carpeta que contiene adaptadores que interactúan con elementos externos.
+
+  - **Contactos:** Carpeta del módulo de contactos.
+
+    - **Contactos.css:** Archivo que contiene los estilos específicos para el componente de contactos.
+
+    - **Contactos.test.tsx:** Archivo que contiene las pruebas para el componente de contactos.
+
+    - **Contactos.tsx:** Archivo principal que contiene la implementación del componente de contactos.
+
+  - **application:** Carpeta que contiene la lógica de aplicación. 
+
+  - **domain:** Carpeta que contiene las entidades que representan conceptos del dominio de la aplicación. Aquí se definen las estructuras de datos fundamentales.
+
+  - **infrastructure:** Carpeta que contiene implementaciones concretas de adaptadores externos. En este caso, puede contener servicios que interactúan con el almacenamiento local (LocalStorage), por ejemplo.
+
+- **src/index.css:** Archivo que contiene los estilos globales para la aplicación.
+
+- **src/index.tsx:** Archivo principal que renderiza la aplicación React en el punto de entrada.
+
+- **src/react-app-env.d.ts:** Archivo de definiciones de tipo para entornos React.
+
+- **src/setupTests.ts:** Archivo de configuración para las pruebas.
+
+- **.gitignore:** Archivo que especifica patrones que deben ser ignorados por Git.
+
+- **jest.config.js:** Archivo de configuración para Jest, que se utiliza en las pruebas.
+
+- **package-lock.json:** Archivo de bloqueo para garantizar consistencia en las dependencias del proyecto.
+
+- **package.json:** Archivo que contiene la configuración del proyecto, incluyendo las dependencias y scripts para ejecutar comandos.
+
+- **tsconfig.json:** Archivo de configuración para TypeScript, donde se especifican las opciones del compilador TypeScript.
