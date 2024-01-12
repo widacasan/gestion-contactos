@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Contacto from '../../domain/Contactos/Contacto';
 import ContactosService from '../../application/Contactos/ContactosService';
 import { v4 as uuidv4 } from 'uuid';
+import "../Contactos/Contactos.css"
 
 const Contactos = () => {
   const [contactos, setContactos] = useState<Contacto[]>([]);
@@ -19,15 +20,16 @@ const Contactos = () => {
     // Al cargar el componente, obtener la lista de contactos
     const contactosObtenidos = contactosService.obtenerContactos();
     setContactos(contactosObtenidos);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
     setNuevoContacto({
       ...nuevoContacto,
       [e.target.name]: e.target.value
     });
     setError(null); // Limpiar el mensaje de error al cambiar un campo
-  };
+  }
 
   const validarCampos = (): boolean => {
     if (!nuevoContacto.nombre || !nuevoContacto.email) {
@@ -94,9 +96,9 @@ const Contactos = () => {
   };
 
   return (
-    <div>
-      <h1>Contactos Component</h1>
-      <div>
+    <div className='container'>
+      <h1>Aplicación React TypeScript de Gestión de Contactos</h1>
+      <div className="form-container">
         <h2>Agregar Nuevo Contacto</h2>
         {error && <p style={{ color: 'red' }}>{error}</p>}
         <input
