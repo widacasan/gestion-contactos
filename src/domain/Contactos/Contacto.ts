@@ -1,6 +1,6 @@
 class Contacto {
   constructor(
-    public id: number,
+    public id: string,
     public nombre: string,
     public telefono: string,
     public direccion: string,
