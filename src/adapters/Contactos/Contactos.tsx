@@ -4,7 +4,11 @@ import ContactosService from "../../application/Contactos/ContactosService";
 import { v4 as uuidv4 } from "uuid";
 import "../Contactos/Contactos.css";
 
-// Componente principal para la gestión de contactos
+/**
+ * Componente principal para la gestión de contactos.
+ *
+ * @component
+ */
 const Contactos = () => {
   // Estados para almacenar la lista de contactos, el nuevo contacto y mensajes de error
   const [contactos, setContactos] = useState<Contacto[]>([]);
@@ -25,7 +29,11 @@ const Contactos = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Maneja cambios en los campos de entrada del formulario
+  /**
+   * Maneja cambios en los campos de entrada del formulario.
+   *
+   * @param {React.ChangeEvent<HTMLInputElement>} e - Evento de cambio en el input.
+   */
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
     setNuevoContacto({
       ...nuevoContacto,
@@ -34,7 +42,11 @@ const Contactos = () => {
     setError(null); // Limpiar el mensaje de error al cambiar un campo
   }
 
-  // Valida que los campos requeridos estén completos y el formato del email sea válido
+  /**
+   * Valida que los campos requeridos estén completos y el formato del email sea válido.
+   *
+   * @returns {boolean} - `true` si los campos son válidos, `false` si no.
+   */
   const validarCampos = (): boolean => {
     if (!nuevoContacto.nombre || !nuevoContacto.email) {
       setError("Nombre y Email son campos obligatorios.");
@@ -51,7 +63,9 @@ const Contactos = () => {
     return true;
   };
 
-  // Agrega un nuevo contacto a la lista si los campos son válidos
+  /**
+   * Agrega un nuevo contacto a la lista si los campos son válidos.
+   */
   const agregarContacto = () => {
     if (validarCampos()) {
       const nuevoContactoConId: Contacto = {
@@ -70,7 +84,11 @@ const Contactos = () => {
     }
   };
 
-  // Edita un contacto existente
+  /**
+   * Edita un contacto existente.
+   *
+   * @param {string} id - ID del contacto a editar.
+   */
   const editarContacto = (id: string) => {
     const contactoAEditar = contactos.find((c) => c.id === id);
     if (contactoAEditar) {
@@ -105,7 +123,11 @@ const Contactos = () => {
     }
   };
 
-  // Elimina un contacto
+  /**
+   * Elimina un contacto.
+   *
+   * @param {string} id - ID del contacto a eliminar.
+   */
   const eliminarContacto = (id: string) => {
     // Lógica para eliminar el contacto
     if (window.confirm("¿Estás seguro de que deseas eliminar este contacto?")) {

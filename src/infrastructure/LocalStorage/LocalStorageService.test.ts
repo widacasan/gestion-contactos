@@ -1,12 +1,27 @@
 import LocalStorageService from "./LocalStorageService";
 
+/**
+ * Suite de pruebas para el LocalStorageService.
+ *
+ * @group LocalStorageService
+ */
 describe("LocalStorageService", () => {
+  /**
+   * Configuración antes de cada prueba.
+   *
+   * @function beforeEach
+   */
   beforeEach(() => {
     // Limpia el LocalStorage antes de cada prueba
     localStorage.clear();
   });
 
-  // Prueba para almacenar y recuperar un elemento del LocalStorage
+  /**
+   * Prueba para almacenar y recuperar un elemento del LocalStorage.
+   *
+   * @test {LocalStorageService#guardarItem}
+   * @test {LocalStorageService#obtenerItem}
+   */
   it("should store and retrieve an item from LocalStorage", () => {
     const localStorageService = new LocalStorageService();
     const key = "testKey";
@@ -22,7 +37,11 @@ describe("LocalStorageService", () => {
     expect(retrievedValue).toEqual(value);
   });
 
-  // Prueba para eliminar un elemento del LocalStorage
+  /**
+   * Prueba para eliminar un elemento del LocalStorage.
+   *
+   * @test {LocalStorageService#eliminarItem}
+   */
   it("should remove an item from LocalStorage", () => {
     const localStorageService = new LocalStorageService();
     const key = "testKey";

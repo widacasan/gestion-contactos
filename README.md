@@ -2,6 +2,36 @@
 
 Este proyecto es una aplicación web de gestión de contactos desarrollada con React y TypeScript. Permite listar, agregar, editar y eliminar contactos, almacenando los datos en el LocalStorage del navegador.
 
+Ademas,utiliza la arquitectura hexagonal (o puertos y adaptadores) para organizar y estructurar la aplicación. La arquitectura hexagonal se elige por varias razones:
+
+### Desacoplamiento de Capas:
+
+- Permite separar claramente las preocupaciones empresariales (lógica del dominio) de los detalles de implementación, facilitando cambios en una capa sin afectar otras.
+
+### Pruebas Unitarias:
+
+- Facilita la escritura de pruebas unitarias para la lógica del dominio sin depender de detalles de infraestructura específicos.
+
+### Adaptabilidad:
+
+- Permite una fácil adaptación a cambios en los requisitos de la aplicación sin afectar la lógica central.
+
+### Independencia de Tecnologías:
+
+- Facilita la integración de diferentes tecnologías, permitiendo cambios en la base de datos o la interfaz de usuario sin afectar la lógica del dominio.
+
+### Facilita la Evolución:
+
+- Diseñada para evolucionar con el tiempo, permitiendo cambios y adaptaciones sin afectar otras partes del sistema.
+
+### Claridad en las Responsabilidades:
+
+- División clara de la aplicación en capas con responsabilidades específicas, mejorando la comprensibilidad y mantenibilidad del código.
+
+Esta arquitectura proporciona flexibilidad, mantenibilidad y adaptabilidad a medida que la aplicación evoluciona, centrando cada capa en tareas específicas y facilitando la colaboración entre diferentes tecnologías.
+
+Para ejecutar la aplicación, sigue las instrucciones detalladas a continuación.
+
 ## Funcionalidades
 
 - Listar contactos en una tabla.
@@ -15,29 +45,42 @@ Este proyecto es una aplicación web de gestión de contactos desarrollada con R
 
 ### Requisitos Previos
 
-Asegúrate de tener Node.js y npm instalados en tu máquina.
+#### Versiones Utilizadas
 
-### Pasos para Ejecutar
+Este proyecto está configurado con las siguientes versiones de Node.js y React:
+
+- **Node.js:** 21.4.0
+- **React:** 18.2.0
+- **npm:** 10.2.4
+
+Asegúrate de tener estas versiones instaladas en tu entorno antes de ejecutar las pruebas unitarias.
 
 1. **Clona el Repositorio:**
 
    ```bash
    git clone https://github.com/widacasan/gestion-contactos.git
 
+   ```
+
 2. **Ingresa al Directorio del Proyecto:**
 
    ```bash
    cd gestion-contactos
+
+   ```
 
 3. **Intala dependencias:**
 
    ```bash
    npm install
 
+   ```
+
 4. **Ejecuta la aplicacion**
 
    ```bash
    npm start
+   ```
 
 La aplicación se abrirá en tu navegador predeterminado.
 
@@ -61,7 +104,7 @@ La aplicación se abrirá en tu navegador predeterminado.
 
     - **Contactos.tsx:** Archivo principal que contiene la implementación del componente de contactos.
 
-  - **application:** Carpeta que contiene la lógica de aplicación. 
+  - **application:** Carpeta que contiene la lógica de aplicación.
 
   - **domain:** Carpeta que contiene las entidades que representan conceptos del dominio de la aplicación. Aquí se definen las estructuras de datos fundamentales.
 
@@ -84,3 +127,47 @@ La aplicación se abrirá en tu navegador predeterminado.
 - **package.json:** Archivo que contiene la configuración del proyecto, incluyendo las dependencias y scripts para ejecutar comandos.
 
 - **tsconfig.json:** Archivo de configuración para TypeScript, donde se especifican las opciones del compilador TypeScript.
+
+# Pruebas Unitarias
+
+A continuación se presentan los comandos para ejecutar las pruebas unitarias de los archivos especificados:
+
+## Contactos.test.tsx
+
+Para ejecutar las pruebas unitarias de Contactos, utiliza el siguiente comando:
+
+```bash
+npm test Contactos.test.tsx
+```
+
+## ContactosService.test.ts
+
+Para ejecutar las pruebas unitarias de ContactosService, utiliza el siguiente comando:
+
+```bash
+npm test ContactosService.test.ts
+```
+
+## Contacto.test.ts
+
+Para ejecutar las pruebas unitarias de Contacto, utiliza el siguiente comando:
+
+```bash
+npm test Contacto.test.ts
+```
+
+## LocalStorageService.test.ts
+
+Para ejecutar las pruebas unitarias de LocalStorageService, utiliza el siguiente comando:
+
+```bash
+npm test LocalStorageService.test.ts
+```
+
+## Contacto.test.ts
+
+Para ejecutar las pruebas unitarias de Contacto, utiliza el siguiente comando:
+
+```bash
+npm test Contacto.test.ts
+```

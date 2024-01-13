@@ -1,6 +1,16 @@
 import Contacto from "./Contacto";
 
+/**
+ * Suite de pruebas para la clase Contacto.
+ *
+ * @group Contacto
+ */
 describe("Contacto", () => {
+  /**
+   * Prueba que verifica la creación de una nueva instancia de Contacto.
+   *
+   * @test {Contacto#constructor}
+   */
   it("should create a new Contacto instance", () => {
     // Datos de ejemplo para el nuevo contacto
     const id = "1";

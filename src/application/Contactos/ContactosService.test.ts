@@ -5,18 +5,37 @@ import ContactosService from "./ContactosService";
 // Mock de LocalStorageService para evitar interacciones reales con el almacenamiento local
 jest.mock("../../infrastructure/LocalStorage/LocalStorageService");
 
+/**
+ * Suite de pruebas para el ContactosService.
+ *
+ * @group ContactosService
+ */
 describe("ContactosService", () => {
   let contactosService: ContactosService;
 
+  /**
+   * Configuración antes de cada prueba.
+   *
+   * @function beforeEach
+   */
   beforeEach(() => {
     contactosService = new ContactosService();
   });
 
+  /**
+   * Limpia todos los mocks después de cada prueba.
+   *
+   * @function afterEach
+   */
   afterEach(() => {
     jest.clearAllMocks();
   });
 
-  // Obtener contactos desde LocalStorage
+  /**
+   * Prueba que verifica la obtención de contactos desde LocalStorage.
+   *
+   * @test {ContactosService#obtenerContactos}
+   */
   it("should obtain contacts from LocalStorage", () => {
     const mockedContactos: Contacto[] = [
       {
@@ -42,7 +61,11 @@ describe("ContactosService", () => {
     );
   });
 
-  // Agregar un nuevo contacto a LocalStorage
+  /**
+   * Prueba que verifica la adición de un nuevo contacto a LocalStorage.
+   *
+   * @test {ContactosService#agregarContacto}
+   */
   it("should add a new contact to LocalStorage", () => {
     const newContact: Contacto = {
       id: "2",
@@ -65,7 +88,11 @@ describe("ContactosService", () => {
     );
   });
 
-  // Editar un contacto existente en LocalStorage
+  /**
+   * Prueba que verifica la edición de un contacto existente en LocalStorage.
+   *
+   * @test {ContactosService#editarContacto}
+   */
   it("should edit an existing contact in LocalStorage", () => {
     const existingContact: Contacto = {
       id: "3",
@@ -92,7 +119,11 @@ describe("ContactosService", () => {
     );
   });
 
-  // Eliminar un contacto existente de LocalStorage
+  /**
+   * Prueba que verifica la eliminación de un contacto existente de LocalStorage.
+   *
+   * @test {ContactosService#eliminarContacto}
+   */
   it("should delete an existing contact from LocalStorage", () => {
     const contactToDelete: Contacto = {
       id: "4",

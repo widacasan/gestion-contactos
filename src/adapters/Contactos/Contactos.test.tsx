@@ -2,7 +2,11 @@ import { render, fireEvent, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import Contactos from "./Contactos";
 
-// Prueba para verificar que el componente se renderiza correctamente
+/**
+ * Prueba para verificar que el componente se renderiza correctamente.
+ *
+ * @test {rendersComponentCorrectly}
+ */
 test("renders component correctly", () => {
   render(<Contactos />);
 
@@ -19,7 +23,11 @@ test("renders component correctly", () => {
   expect(screen.getByText("Listado de Contactos")).toBeInTheDocument();
 });
 
-// Prueba para verificar que se agrega un nuevo contacto correctamente
+/**
+ * Prueba para verificar que se agrega un nuevo contacto correctamente.
+ *
+ * @test {addsANewContact}
+ */
 test("adds a new contact", () => {
   render(<Contactos />);
 
